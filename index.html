@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12a8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .slideshow-container {
+            width: 600px;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            border-radius: 8px;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slideshow-container">
+        <img src="1.jpg" alt="Ảnh 1" class="slide active">
+        <img src="2.jpg" alt="Ảnh 2" class="slide">
+        <img src="3.jpg" alt="Ảnh 3" class="slide">
+        <img src="4.jpg" alt="Ảnh 4" class="slide">
+        <img src="5.jpg" alt="Ảnh 5" class="slide">
+        <img src="6.jpg" alt="Ảnh 6" class="slide">
+        <img src="7.jpg" alt="Ảnh 7" class="slide">
+        <img src="8.jpg" alt="Ảnh 8" class="slide">
+        <img src="9.jpg" alt="Ảnh 9" class="slide">
+        <img src="10.jpg" alt="Ảnh 10" class="slide">
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+         
+            slides[currentIndex].classList.remove('active');
+
+          
+            currentIndex = (currentIndex + 1) % totalSlides;
+
+          
+            slides[currentIndex].classList.add('active');
+        }
+
+       
+        setInterval(showNextSlide, 2000);
+    </script>
+
+</body>
+</html>
